@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project basedir="." default="package" name="PROJECT_NAME">
+<project basedir="." default="package" name="HelloSong">
 	<!--
 	This script assumes:
 	1) CATALINA_HOME environment variable points to tomcat's directory
@@ -43,6 +43,8 @@
 	</path>
 	<target name="init">
 		<mkdir dir="${project.classes.dir}" />
+		<mkdir dir="${project.src.dir}" />
+		<mkdir dir="${project.lib.dir}" />
 		<copy includeemptydirs="false" todir="${project.classes.dir}">
 			<fileset dir="src">
 				<exclude name="**/*.java" />
