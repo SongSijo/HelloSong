@@ -75,6 +75,9 @@
 	</target>
 	<target depends="package" name="deploy" description="Copying ${project.war} to ${project.deploy.location}">
 		<copy file="${project.war}" todir="${project.deploy.location}" />
+		<zip destfile="HelloSong.zip">
+			<zipfileset fullpath="${project.war}" dir="." includes="${project.war}"/>
+		</zip>
 	</target>
 
 </project>
