@@ -65,16 +65,16 @@
 
 	</target>
 	<target depends="build" name="package" description="Packagign all files into ${project.war}">
-		<war destfile="${project.war}" index="true" needxmlfile="fasle">
+		<mkdir dir="webapp"/>
+		<war destfile="webapp/${project.war}" index="true" needxmlfile="fasle">
 			<classes dir="${project.classes.dir}" />
 			<lib dir="${project.lib.dir}" />
 		</war>
 	</target>
 	<target depends="package" name="deploy" description="Copying ${project.war} to ${project.deploy.location}">
-		<copy file="${project.war}" todir="${project.deploy.location}" />
 		<zip destfile="HelloSong.zip">
 			<fileset dir=".">
-				<include name="**/*.*" />
+				<include name="webapp/${project.war}" />
 			</fileset>
 		</zip>
 	</target>
