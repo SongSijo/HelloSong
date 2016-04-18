@@ -69,12 +69,15 @@
 		<war destfile="webapps/${project.war}" index="true" needxmlfile="fasle">
 			<classes dir="${project.classes.dir}" />
 			<lib dir="${project.lib.dir}" />
+			<fileset dir = "${project.web.dir}">
+			      <include name = "**/*.*"/>
+		   	</fileset>
 		</war>
 	</target>
 	<target depends="package" name="deploy" description="Copying ${project.war} to ${project.deploy.location}">
 		<zip destfile="HelloSong.zip">
 			<fileset dir=".">
-				<include name="webapp/${project.war}" />
+				<include name="webapps/${project.war}" />
 			</fileset>
 		</zip>
 	</target>
