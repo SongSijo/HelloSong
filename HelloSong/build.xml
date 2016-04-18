@@ -65,8 +65,8 @@
 
 	</target>
 	<target depends="build" name="package" description="Packagign all files into ${project.war}">
-		<mkdir dir="webapp"/>
-		<war destfile="webapp/${project.war}" index="true" needxmlfile="fasle">
+		<mkdir dir="webapps"/>
+		<war destfile="webapps/${project.war}" index="true" needxmlfile="fasle">
 			<classes dir="${project.classes.dir}" />
 			<lib dir="${project.lib.dir}" />
 		</war>
