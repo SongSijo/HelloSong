@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%= "Hello Song! Song!" %>
+<%= "Hello  Song!" %>
 
 </body>
 </html>
